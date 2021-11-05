@@ -11,13 +11,12 @@ def get_res_txt(url, req_type):
         r = requests.request(req_type.upper(), url, headers={"User-Agent": "PostmanRuntime/7.26.8"})
     except Exception as e:
         return ""
-    print(r.status_code)
     soup = BeautifulSoup(r.text, "html.parser")
     return soup.get_text()
 
 def convert_args_into_dict(sys_args):
     input_dict = {}
-    for arg in sys.argv:
+    for arg in sys_args:
         arg = arg.replace("--", "")
         if"=" in arg:
             if arg.split("=")[-1].split(",").__len__()>1:
@@ -41,5 +40,4 @@ def return_final_output():
     return tem_dict
 
 
-# print(convert_args_into_dict(sys.argv))
 print(return_final_output())
