@@ -37,3 +37,17 @@ API:-->
                 "type": "success"
             }
 ```
+
+
+
+Here if we want to run like `node my-script.js --url=https://anatta.io --words=Sustainable,Growth,Anatta`.
+
+then run below script: 
+```
+python pass_vari.py --url=https://anatta.io --words=Sustainable,Growth,Anatta
+```
+response:
+
+```
+{'Sustainable': 7, 'Growth': 3, 'Anatta': 10}
+```
